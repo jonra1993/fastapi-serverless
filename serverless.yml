@@ -1,0 +1,29 @@
+org: jvargas1993
+app: fastapi-serverless
+service: fastapi-serverless
+  
+frameworkVersion: '3'
+useDotenv: true
+
+custom:
+  pythonRequirements:
+    usePoetry: true
+
+provider:
+  name: aws
+  runtime: python3.10
+  region: us-east-1
+  memorySize: 256 
+
+functions:
+  app:
+    name: app
+    handler: app/main.handler
+    events:
+      - httpApi: '*'
+    environment:
+      WEATHER_URL: ${env:WEATHER_URL}
+
+plugins:
+  - serverless-offline
+  - serverless-python-requirements

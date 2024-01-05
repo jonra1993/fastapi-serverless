@@ -1,0 +1,16 @@
+{
+  "name": "fastapi-serverless",
+  "version": "1.0.0",
+  "description": "Example of a Python Fastapi service with traditional Serverless Framework",
+  "author": "Jonathan Vargas <jonathan.vargas1104@gmail.com>",
+  "scripts": {
+    "dev": "serverless offline start --stage dev --reloadHandler",
+    "deploy_dev": "serverless deploy --stage dev",
+    "deploy_prod": "serverless deploy --stage prod"
+  },
+  "devDependencies": {
+    "serverless-offline": "^13.3.2",
+    "serverless-python-requirements": "^6.0.0"
+  },
+  "dependencies": {}
+}
